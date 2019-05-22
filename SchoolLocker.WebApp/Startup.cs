@@ -33,7 +33,7 @@ namespace SchoolLocker.WebApp
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            services.AddScoped<IUnitOfWork, UnitOfWork>(serviceProvider => new UnitOfWork());
+            services.AddScoped<IUnitOfWork, UnitOfWork>(_ => new UnitOfWork());
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 

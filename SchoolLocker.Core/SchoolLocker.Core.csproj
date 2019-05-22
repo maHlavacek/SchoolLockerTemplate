@@ -15,7 +15,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="DataTransferObjects\" />
     <Folder Include="Validations\" />
   </ItemGroup>
 
