@@ -24,7 +24,9 @@ namespace SchoolLocker.Persistence
                 Number = l.Number,
                 From = l.Bookings.FirstOrDefault().From,
                 To = l.Bookings.FirstOrDefault().To
-            }).ToArray();
+            })
+            .OrderBy(o => o.Number)
+            .ToArray();
         }
     }
 }

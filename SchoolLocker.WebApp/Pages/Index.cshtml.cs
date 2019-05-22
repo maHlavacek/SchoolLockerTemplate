@@ -22,7 +22,7 @@ namespace SchoolLocker.WebApp.Pages
         public void OnGet()
         {
             ViewData["Message"] = "Lockers Overview";
-
+            LockerOverViewDTOs = _unitOfWork.LockerRepository.GetLockerOverViewDTOs();
         }
     }
 }
