@@ -9,6 +9,8 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using SchoolLocker.Core.Contracts.Persistence;
+using SchoolLocker.Persistence;
 
 namespace SchoolLocker.WebApp
 {
@@ -31,7 +33,7 @@ namespace SchoolLocker.WebApp
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-
+            services.AddScoped<IUnitOfWork, UnitOfWork>(serviceProvider => new UnitOfWork());
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
