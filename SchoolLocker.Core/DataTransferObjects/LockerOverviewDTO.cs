@@ -5,11 +5,11 @@ using System.Text;
 
 namespace SchoolLocker.Core.DataTransferObjects
 {
-    public class LockerOverviewDTO : ILockerOverViewDTO
+    public class LockerOverViewDTO : ILockerOverViewDTO
     {
         public int Number { get; set; }
         public int CountBookings { get; set; }
         public DateTime From { get ; set; }
-        public DateTime To { get ; set; }
+        public DateTime? To { get ; set; }
     }
 }

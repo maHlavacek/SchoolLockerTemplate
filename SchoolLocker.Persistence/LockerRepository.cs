@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using SchoolLocker.Core.Contracts.Persistence;
+using SchoolLocker.Core.DataTransferObjects;
 using SchoolLocker.Core.Entities;
 
 namespace SchoolLocker.Persistence
@@ -15,5 +16,15 @@ namespace SchoolLocker.Persistence
             _dbContext = dbContext;
         }
 
+        public LockerOverViewDTO[] GetLockerOverViewDTOs()
+        {
+            return _dbContext.Lockers.Select(l => new LockerOverViewDTO
+            {
+                CountBookings = l.Bookings.Count(),
+                Number = l.Number,
+                From = l.Bookings.FirstOrDefault().From,
+                To = l.Bookings.FirstOrDefault().To
+            }).ToArray();
+        }
     }
 }
