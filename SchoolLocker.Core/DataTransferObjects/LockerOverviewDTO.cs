@@ -9,7 +9,7 @@ namespace SchoolLocker.Core.DataTransferObjects
     {
         public int Number { get; set; }
         public int CountBookings { get; set; }
-        public DateTime From { get; set; }
-        public DateTime? To { get ; set; }
+        public string From { get; set; }
+        public string To { get ; set; }
     }
 }

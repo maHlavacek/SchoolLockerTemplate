@@ -22,8 +22,8 @@ namespace SchoolLocker.Persistence
             {
                 CountBookings = l.Bookings.Count(),
                 Number = l.Number,
-                From = l.Bookings.FirstOrDefault().From,
-                To = l.Bookings.FirstOrDefault().To
+                From = l.Bookings.FirstOrDefault().From.ToShortDateString(),
+                To = l.Bookings.FirstOrDefault().To.ToString().Substring(0, 10)
             })
             .OrderBy(o => o.Number)
             .ToArray();
