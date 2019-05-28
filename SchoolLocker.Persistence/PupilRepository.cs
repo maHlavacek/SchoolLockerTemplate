@@ -19,20 +19,38 @@ namespace SchoolLocker.Persistence
             _dbContext = dbContext;
         }
 
-        public void AddPupil(PupilOverViewDTO pupil)
+        public void AddPupil(Pupil pupil)
         {
             _dbContext.Add(pupil);
         }
 
-        public PupilOverViewDTO[] GetPupilOverViewDTOs()
+        public void ChangePupil(Pupil pupil)
         {
-            return _dbContext.Pupils.Select(p => new PupilOverViewDTO
+            var pupilToChange = _dbContext.Pupils.Find(pupil.Id);
+            if(pupilToChange == null)
             {
-                FirstName = p.FirstName,
-                LastName = p.LastName
+                return;
             }
-            ).OrderBy(o => o.LastName)
-            .ToArray();
+            _dbContext.Entry(pupilToChange).CurrentValues.SetValues(pupil);
+            _dbContext.SaveChanges();
+        }
+
+        public void DeletePupil(int id)
+        {
+            var pupil = _dbContext.Pupils.SingleOrDefault(p => p.Id == id);
+            _dbContext.Pupils.Remove(pupil);
+            _dbContext.SaveChanges();
+        }
+
+        public Pupil GetPupilById(int id)
+        {
+            return _dbContext.Pupils.SingleOrDefault(p => p.Id == id);
+        }
+
+
+        public Pupil[] GetPupils()
+        {
+            return _dbContext.Pupils.ToArray();
         }
     }
 }

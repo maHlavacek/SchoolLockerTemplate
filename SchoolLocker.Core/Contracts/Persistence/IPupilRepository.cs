@@ -7,8 +7,10 @@ namespace SchoolLocker.Core.Contracts.Persistence
 {
     public interface IPupilRepository
     {
-        PupilOverViewDTO[] GetPupilOverViewDTOs();
-
-        void AddPupil(PupilOverViewDTO pupil);
+        void AddPupil(Pupil pupil);
+        Pupil GetPupilById(int id);
+        void DeletePupil(int id);
+        void ChangePupil(Pupil pupil);
+        Pupil[] GetPupils();
     }
 }

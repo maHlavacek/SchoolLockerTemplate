@@ -7,17 +7,21 @@
 <h2>@ViewData["Message"]</h2>
 <h3>Pupil</h3>
 <form method="post">
-    <table class="table">
-        <tbody>       
-            <tr>
-                <th>
-                    FirstName
-                </th>
-                
-                <th>
-                    LastName
-                </th>
-            </tr>    
-        </tbody>
-    </table>
+    <br />
+        <b>
+             @Html.DisplayNameFor(model => model.Pupil.FirstName)
+        </b>
+    <br />
+    <input type="text" name="firstname"><br />
+        <b>
+            @Html.DisplayNameFor(model => model.Pupil.LastName) 
+        </b>
+    <br />
+    <input type="text" name="lastname"><br /><br />
+    <button type="submit"
+            class="btn btn-primary "
+            asp-page-handler="Create">
+        Create
+    </button><br />
+    <a href="/index">Back to List</a>
 </form>

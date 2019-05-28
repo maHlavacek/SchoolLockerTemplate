@@ -4,5 +4,26 @@
     ViewData["Title"] = "Details";
 }
 
-<h2>Details</h2>
+<h1>Details</h1>
+<h3>Pupil</h3>
+<br />
+    <b>
+        @Html.DisplayNameFor(model => model.Pupil.Id)
+    </b>
+<br />@Html.DisplayFor(model => model.Pupil.Id)
+<br />
+<b>@Html.DisplayNameFor(model => model.Pupil.FirstName)  </b>
+<br />@Html.DisplayFor(model => model.Pupil.FirstName)
+<br />
+<b>@Html.DisplayNameFor(model => model.Pupil.LastName) </b>
+<br />@Html.DisplayFor(model => model.Pupil.LastName)
+<br />
+<b>@Html.DisplayNameFor(model => model.Pupil.Name) </b>
+<br />@Html.DisplayFor(model => model.Pupil.Name)
+<br />
+<b>@Html.DisplayNameFor(model => model.Pupil.Version) </b>
+<br />@Html.DisplayFor(model => model.Pupil.Version)
+<br />
+<br />
+<a href="/Index">Back to List</a>
 

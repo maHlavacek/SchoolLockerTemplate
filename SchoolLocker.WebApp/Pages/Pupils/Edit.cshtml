@@ -4,5 +4,20 @@
     ViewData["Title"] = "Edit";
 }
 
-<h2>Edit</h2>
-
+<h1>Edit</h1>
+<br />
+<h3>Pupil</h3>
+<br />
+<form method="post">
+    @Html.HiddenFor(model => model.Pupil.Id)
+    <b>@Html.DisplayNameFor(model => model.Pupil.FirstName) </b><br />
+    <input asp-for="Pupil.FirstName"><br />
+    <b>@Html.DisplayNameFor(model => model.Pupil.LastName) </b><br />
+    <input asp-for="Pupil.LastName"><br /><br />
+    <button type="submit"
+            class="btn btn-primary "
+            asp-page-handler="Edit">
+        Save
+    </button><br />
+    <a href="/pupils">Back to List</a>
+</form>

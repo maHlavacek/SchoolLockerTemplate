@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SchoolLocker.Core.Contracts.Persistence;
 using SchoolLocker.Core.DataTransferObjects;
+using SchoolLocker.Core.Entities;
 
 namespace SchoolLocker.WebApp.Pages.Pupils
 {
@@ -17,12 +18,37 @@ namespace SchoolLocker.WebApp.Pages.Pupils
         {
             _unitOfWork = unitOfWork;
         }
-        public PupilOverViewDTO[] PupilOverViewDTOs { get; private set; }
+        public Pupil[] Pupils { get; private set; }
 
         public void OnGet()
         {
             ViewData["Message"] = "Index";
-            PupilOverViewDTOs = _unitOfWork.PupilRepository.GetPupilOverViewDTOs();
+            Pupils = _unitOfWork.PupilRepository.GetPupils();
+        }
+        public IActionResult OnPostDeleteSelected(int Id)
+        {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+            return RedirectToPage("/Pupils/Delete", new { id = Id });
+        }
+
+        public IActionResult OnPostDetailsSelected(int Id)
+        {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+            return RedirectToPage("/Pupils/Details", new { id = Id });
+        }
+        public IActionResult OnPostEditSelected(int Id)
+        {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+            return RedirectToPage("/Pupils/Edit", new { id = Id });
         }
     }
 }

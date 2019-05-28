@@ -16,15 +16,15 @@
         <thead>
             <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.PupilOverViewDTOs[0].LastName)
+                    @Html.DisplayNameFor(model => model.Pupils[0].LastName)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.PupilOverViewDTOs[0].FirstName)
+                    @Html.DisplayNameFor(model => model.Pupils[0].FirstName)
                 </th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in Model.PupilOverViewDTOs)
+            @foreach (var item in Model.Pupils)
             {
                 <tr>
                     <td>
@@ -33,6 +33,26 @@
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.FirstName)
+                    </td>
+                    <td>
+                        <button type="submit"
+                                class="btn btn-link "
+                                asp-page-handler="DetailsSelected"
+                                asp-route-pupilId="@item.Id">
+                            Details
+                        </button> |
+                        <button type="submit"
+                                class="btn btn-link "
+                                asp-page-handler="EditSelected"
+                                asp-route-pupilId="@item.Id">
+                            Edit
+                        </button> |
+                        <button type="submit"
+                                class="btn btn-link "
+                                asp-page-handler="DeleteSelected"
+                                asp-route-pupilId="@item.Id">
+                            Delete
+                        </button>
                     </td>
                 </tr>
             }
