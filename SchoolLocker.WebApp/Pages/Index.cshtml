@@ -4,4 +4,43 @@
     ViewData["Title"] = "Home page";
 }
 
-
+<h2>@ViewData["Message"]</h2>
+<form method="post">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.LockerOverViewDTOs[0].Number)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LockerOverViewDTOs[0].CountBookings)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LockerOverViewDTOs[0].From)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LockerOverViewDTOs[0].To)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.LockerOverViewDTOs)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Number)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CountBookings)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.From)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.To)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</form>

@@ -10,7 +10,7 @@ namespace SchoolLocker.Core.Contracts.Persistence
         int CountBookings { get; set; }
 
         DateTime From { get; set; }
-        DateTime? To { get; set; }
+        DateTime? To { get ; set; }
 
     }
 }
