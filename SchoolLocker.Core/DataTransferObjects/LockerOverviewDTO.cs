@@ -1,6 +1,7 @@
 ﻿using SchoolLocker.Core.Contracts.Persistence;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace SchoolLocker.Core.DataTransferObjects
@@ -9,7 +10,10 @@ namespace SchoolLocker.Core.DataTransferObjects
     {
         public int Number { get; set; }
         public int CountBookings { get; set; }
-        public string From { get; set; }
-        public string To { get ; set; }
+        [DataType(DataType.Date)]
+        public DateTime From { get; set; }
+        [DataType(DataType.Date)]
+
+        public DateTime? To { get ; set; }
     }
 }

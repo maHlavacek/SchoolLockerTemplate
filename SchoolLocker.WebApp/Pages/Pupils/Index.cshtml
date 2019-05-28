@@ -1,0 +1,41 @@
+﻿@page
+@model SchoolLocker.WebApp.Pages.Pupils.IndexModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>@ViewData["Message"]</h2>
+<form method="post">
+    <button type ="submit"
+            class="btn btn-primary"
+            asp-page="Create">
+            Create new
+    </button>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.PupilOverViewDTOs[0].LastName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PupilOverViewDTOs[0].FirstName)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.PupilOverViewDTOs)
+            {
+                <tr>
+                    <td>
+
+                        @Html.DisplayFor(modelItem => item.LastName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FirstName)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</form>
