@@ -19,6 +19,11 @@ namespace SchoolLocker.Persistence
             _dbContext = dbContext;
         }
 
+        public void AddPupil(PupilOverViewDTO pupil)
+        {
+            _dbContext.Add(pupil);
+        }
+
         public PupilOverViewDTO[] GetPupilOverViewDTOs()
         {
             return _dbContext.Pupils.Select(p => new PupilOverViewDTO
