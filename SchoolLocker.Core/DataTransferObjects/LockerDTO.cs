@@ -1,19 +1,18 @@
-﻿using SchoolLocker.Core.Contracts.Persistence;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace SchoolLocker.Core.DataTransferObjects
 {
-    public class LockerOverViewDTO : ILockerOverViewDTO
+    public class LockerDTO
     {
-        public int Number { get; set; }
         public int CountBookings { get; set; }
+        public int Number { get; set; }
         [DataType(DataType.Date)]
         public DateTime From { get; set; }
         [DataType(DataType.Date)]
 
-        public DateTime? To { get ; set; }
+        public DateTime? To { get; set; }
     }
 }

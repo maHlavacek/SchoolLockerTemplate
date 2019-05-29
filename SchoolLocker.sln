@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolLocker.ImportConsole"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Utils", "Utils\Utils.csproj", "{7677B30F-E328-431C-A456-B09039EBB068}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolLocker.WebApp", "SchoolLocker.WebApp\SchoolLocker.WebApp.csproj", "{EF5550CB-3CB8-441B-B422-9504F22EC2C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolLocker.WebApp", "SchoolLocker.WebApp\SchoolLocker.WebApp.csproj", "{EF5550CB-3CB8-441B-B422-9504F22EC2C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolLocker.Api", "SchoolLocker.Api\SchoolLocker.Api.csproj", "{826AA4F6-3E32-4500-AC31-54B5CC60ACD0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{EF5550CB-3CB8-441B-B422-9504F22EC2C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EF5550CB-3CB8-441B-B422-9504F22EC2C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EF5550CB-3CB8-441B-B422-9504F22EC2C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{826AA4F6-3E32-4500-AC31-54B5CC60ACD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{826AA4F6-3E32-4500-AC31-54B5CC60ACD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{826AA4F6-3E32-4500-AC31-54B5CC60ACD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{826AA4F6-3E32-4500-AC31-54B5CC60ACD0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

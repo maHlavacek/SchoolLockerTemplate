@@ -18,9 +18,9 @@ namespace SchoolLocker.WebApp.Pages.Pupils
         {
             _unitOfWork = unitOfWork;
         }
-        public void OnGet(int Id)
+        public void OnGet(int id)
         {
-            Pupil = _unitOfWork.PupilRepository.GetPupilById(Id);
+            Pupil = _unitOfWork.PupilRepository.GetPupilById(id);
         }
     }
 }

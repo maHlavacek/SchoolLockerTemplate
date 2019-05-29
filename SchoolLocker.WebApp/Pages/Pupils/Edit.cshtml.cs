@@ -12,7 +12,7 @@ namespace SchoolLocker.WebApp.Pages.Pupils
     public class EditModel : PageModel
     {
         private readonly IUnitOfWork _unitOfWork;
-
+        [BindProperty]
         public Pupil Pupil { get; set; }
 
         public EditModel(IUnitOfWork unitOfWork)
@@ -30,7 +30,7 @@ namespace SchoolLocker.WebApp.Pages.Pupils
                 return Page();
             }
             _unitOfWork.PupilRepository.ChangePupil(Pupil);
-            return RedirectToPage("/Index");
+            return RedirectToPage("/Pupils/Index");
         }
 
     }

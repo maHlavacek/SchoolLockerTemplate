@@ -8,6 +8,6 @@ namespace SchoolLocker.Core.Contracts.Persistence
 {
     public interface ILockerRepository
     {
-        LockerOverViewDTO[] GetLockerOverViewDTOs();
+        LockerDTO[] GetLockerOverViewDTOs();
     }
 }

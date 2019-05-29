@@ -16,9 +16,9 @@ namespace SchoolLocker.Persistence
             _dbContext = dbContext;
         }
 
-        public LockerOverViewDTO[] GetLockerOverViewDTOs()
+        public LockerDTO[] GetLockerOverViewDTOs()
         {
-            return _dbContext.Lockers.Select(l => new LockerOverViewDTO
+            return _dbContext.Lockers.Select(l => new LockerDTO
             {
                 CountBookings = l.Bookings.Count(),
                 Number = l.Number,

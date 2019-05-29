@@ -29,7 +29,7 @@ namespace SchoolLocker.WebApp.Pages.Pupils
         public IActionResult OnPostDetailsSelected(int id)
         {
             _unitOfWork.PupilRepository.DeletePupil(id);
-            return RedirectToPage("/Pupils");
+            return RedirectToPage("/Pupils/Index");
         }
 
     }

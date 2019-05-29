@@ -22,6 +22,7 @@ namespace SchoolLocker.Persistence
         public void AddPupil(Pupil pupil)
         {
             _dbContext.Add(pupil);
+            _dbContext.SaveChanges();
         }
 
         public void ChangePupil(Pupil pupil)

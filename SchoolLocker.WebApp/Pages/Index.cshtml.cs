@@ -13,7 +13,7 @@ namespace SchoolLocker.WebApp.Pages
     {
         private readonly IUnitOfWork _unitOfWork;
 
-        public LockerOverViewDTO[] LockerOverViewDTOs { get; set; }
+        public LockerDTO[] LockerOverViewDTOs { get; set; }
 
         public IndexModel(IUnitOfWork unitOfWork)
         {
