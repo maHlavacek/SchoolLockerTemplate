@@ -28,5 +28,12 @@ namespace SchoolLocker.Persistence
             .OrderBy(o => o.Number)
             .ToArray();
         }
+
+        public int[] GetLockersIntArray()
+        {
+            return _dbContext.Lockers.OrderBy(o => o.Number)
+                                     .Select(l => l.Number)
+                                     .ToArray();
+        }
     }
 }

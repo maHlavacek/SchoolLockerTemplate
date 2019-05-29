@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SchoolLocker.Core.DataTransferObjects
 {
-    class BookingDTO
+    public class BookingDTO
     {
         public int LockerNumber { get; set; }
         public string LastName { get; set; }

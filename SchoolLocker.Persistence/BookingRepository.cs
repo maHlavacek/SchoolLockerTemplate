@@ -3,6 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using SchoolLocker.Core.Contracts.Persistence;
+using SchoolLocker.Core.DataTransferObjects;
 using SchoolLocker.Core.Entities;
 
 namespace SchoolLocker.Persistence
@@ -20,6 +21,21 @@ namespace SchoolLocker.Persistence
         public async Task AddRangeAsync(Booking[] bookings)
         {
             await _dbContext.Bookings.AddRangeAsync(bookings);
+        }
+
+        public BookingDTO[] GetBookingBetweenDate(int lockerNumber, DateTime from, DateTime to)
+        {
+            return _dbContext.Bookings.Where(b => b.From >= from
+                                                  && b.From <= to 
+                                                  && b.Locker.Number == lockerNumber)
+                .Select(b => new BookingDTO
+                {
+                    LockerNumber = b.Locker.Number,
+                    LastName = b.Pupil.LastName,
+                    FirstName = b.Pupil.FirstName,
+                    From = b.From,
+                    To = b.To
+                }).ToArray();
         }
 
         // 2020-07-01  2020-07-20  ==> 0
